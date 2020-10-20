@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+@import "variables.scss";
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    display: block;
+
+    &-nav {
+        font-size: $fz-h2;
+
+        &-item {
+            font-size: 16px;
+        }
+    }
+}
