@@ -1,5 +1,5 @@
 //Основые цвета файла 
-$color-white: #fff;
+$color_white: #fff;
 $color_darkbrown: #362f2d;
 $color_brown: #998675;
 $color_lightbrown: #c7b299;
@@ -8,3 +8,34 @@ $color_textlight: #8c8c8c;
 
 //Основные размеры шрифтов 
 $fz-h2: 30px;
+
+// Шаблоны 
+%button {
+    display: block;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 23px;
+    border-bottom: 2px solid #736357;
+    padding: 20px 35px 18px 35px;
+    color: $color_white;
+    margin: 0;
+    text-transform: uppercase;
+    border-radius: 3px;
+    outline: none;
+    background-color: $color_brown;
+}
+
+%button-hover {
+    transform: none;
+    box-shadow: none;
+    padding: 20px 40px 18px 40px;
+    transition: 0.4s ease-in-out;
+    background-color: $color_white;
+    color: $color_brown;
+}
+
+%button-active {
+    transform: translateY(-7px);
+}
