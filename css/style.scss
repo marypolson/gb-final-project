@@ -7,10 +7,6 @@
 @import "variables.scss";
 @import "fonts.scss";
 
-body {
-    width: 1920px;
-}
-
 button {
     cursor: pointer;
 }
@@ -27,17 +23,21 @@ a {
     background-size: cover;
     height: 1024px;
     padding: 40px 0 0 0;
+    box-sizing: border-box;
 
     &-wrap {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         margin: 0 0 300px 0;
+    }
+
+    &-wrap-nav {
+        display: flex;
     }
 
     &-logo {
         align-self: center;
         display: flex;
-        margin: 0 220px 0 0;
 
         &-svg {
             fill: $color_white;
@@ -142,7 +142,7 @@ a {
     &-carosel-wrap {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         position: relative;
     }
@@ -158,12 +158,7 @@ a {
         transform: rotate(45deg);
     }
 
-    &-carusel-arrow:nth-last-of-type(1) {
-        margin: 0 0 300px 470px;
-    }
-
     &-carusel-arrow:nth-last-of-type(2) {
-        margin: 0 470px 300px 0;
         transform: rotate(225deg);
     }
 
@@ -238,39 +233,48 @@ a {
 
 .work {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 80px 0;
+    box-sizing: border-box;
 
-    &-wrapper {
+    &-list {
+        list-style-type: none;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 30px 0 0;
+        flex-wrap: wrap;
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 30px 0 0;
+        }
+
+        &-wrapper::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 3px;
+            background-color: #f1eee9;
+        }
+
+        &-wrapper:last-child {
+            margin: 0;
+        }
+
+        &-wrapper:hover .work-header {
+            color: $color_lightbrown;
+        }
+
+        &-wrapper:hover .work-svg {
+            fill: $color_lightbrown;
+        }
+
+        &-wrapper:hover::after {
+            background-color: $color_text;
+        }
     }
 
-    &-wrapper::after {
-        content: "";
-        display: block;
-        width: 70px;
-        height: 3px;
-        background-color: #f1eee9;
-    }
-
-    &-wrapper:last-child {
-        margin: 0;
-    }
-
-    &-wrapper:hover .work-header {
-        color: $color_lightbrown;
-    }
-
-    &-wrapper:hover .work-svg {
-        fill: $color_lightbrown;
-    }
-
-    &-wrapper:hover::after {
-        background-color: $color_text;
-    }
 
     &-svg {
         fill: $color_text;
@@ -305,6 +309,7 @@ a {
     flex-direction: column;
     align-items: center;
     padding: 80px 0 0 0;
+    box-sizing: border-box;
 
     &-header {
         @extend %font-h2;
@@ -313,23 +318,25 @@ a {
 
     &-text {
         @extend %font-text;
-        width: 770px;
+        max-width: 770px;
         text-align: center;
         margin: 0 0 40px 0;
     }
 
     &-img {
         height: 482px;
+        width: auto;
     }
 }
 
 .purchase {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     background-color: rgb(78, 52, 39);
 
     &-wrap {
-        margin: 50px 470px 50px 0;
+        margin: 50px 0 50px 0;
     }
 
     &-header {
@@ -373,6 +380,7 @@ a {
     flex-direction: column;
     align-items: center;
     padding: 80px 0;
+    box-sizing: border-box;
 
     &-header {
         @extend %font-h2;
@@ -381,7 +389,7 @@ a {
 
     &-text {
         @extend %font-text;
-        width: 770px;
+        max-width: 770px;
         text-align: center;
         margin: 0 0 40px 0;
         color: $color_textlight;
@@ -389,6 +397,8 @@ a {
 
     &-nav-list {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         list-style-type: none;
         margin: 0 0 40px 0;
 
@@ -433,14 +443,13 @@ a {
         list-style-type: none;
         justify-content: space-around;
         align-self: center;
-        width: 64%;
         margin: 0 0 10px 0;
 
         &-item {
             position: relative;
             display: flex;
             flex-direction: column;
-            margin: 0 30px 30px 0;
+            padding: 0 30px 30px;
 
 
             &-img {
@@ -577,9 +586,10 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 0 80px 0;
 
     &-video {
+        width: 100% !important;
+        height: auto !important;
         position: relative;
         z-index: -1;
     }
@@ -633,7 +643,10 @@ a {
 
 .mobile {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    padding: 80px 0 0 0;
+    box-sizing: border-box;
 
     &-bg {
         margin: 0 30px 0 0;
@@ -648,12 +661,12 @@ a {
         @extend %font-text;
         color: $color_textlight;
         margin: 0 0 40px 0;
-        width: 670px;
+        max-width: 670px;
     }
 
     &-list {
         list-style-type: none;
-        padding: 0 0 0 100px;
+        padding: 0 0 60px 100px;
 
         &-item {
             position: relative;
@@ -680,15 +693,17 @@ a {
 
 .numbers {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     background-color: rgb(78, 52, 39);
-    padding: 70px 0 60px 0;
+    padding: 0 0 60px 0;
+    box-sizing: border-box;
 
     &-item {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 0 60px 0 0;
+        margin: 60px 60px 0;
 
         &-svg {
             fill: $color_lightbrown;
@@ -742,6 +757,7 @@ a {
     flex-direction: column;
     align-items: center;
     padding: 80px 0;
+    box-sizing: border-box;
 
     &-header {
         @extend %font-h2;
@@ -752,13 +768,14 @@ a {
         @extend %font-text;
         color: $color_textlight;
         text-align: center;
-        width: 770px;
+        max-width: 770px;
         margin: 0 0 30px 0;
     }
 
     &-list {
         list-style-type: none;
         display: flex;
+        flex-wrap: wrap;
         margin: 0 0 40px 0;
 
         &-item {
@@ -894,24 +911,32 @@ a {
 
 .partners {
     background-image: url(../img/partners-bg.jpg);
+    background-color: $color_darkbrown;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 140px 0;
+    padding: 90px 0;
+    box-sizing: border-box;
 
     &-logo {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
         align-items: center;
-        height: 210px;
 
-        &-png {
-            margin: 0 90px 0 0;
+        &-link:hover {
+            opacity: 0.7;
         }
 
-        &-png:last-child {
-            margin: 0;
+        &-link:focus {
+            opacity: 0.7;
+        }
+
+        &-link:active {
+            transform: translateY(-7px);
         }
     }
+
+
 }
 
 .footer {
@@ -921,6 +946,7 @@ a {
         padding: 70px 0;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     &-info {
@@ -1115,19 +1141,31 @@ a {
             &-link {
                 margin: 0 10px 6px 0;
             }
+
+            &-link:hover {
+                opacity: 0.7;
+            }
+
+            &-link:focus {
+                opacity: 0.7;
+            }
+
+            &-link:active {
+                transform: translateY(-7px);
+            }
         }
     }
 
     &-copyright {
         display: flex;
-        justify-content: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
         background-color: #111;
         padding: 45px 0;
 
         &-list {
             list-style-type: none;
             display: flex;
-            margin: 0 455px 0 0;
 
             &-item {
                 font-family: 'Montserrat', sans-serif;
@@ -1181,4 +1219,264 @@ a {
             }
         }
     }
+}
+
+.mobile-header-wrap-nav {
+    display: none;
+}
+
+@media (max-width: 1250px) {
+    .realization-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .mobile-bg {
+        width: 30%;
+        height: auto;
+    }
+}
+
+@media (max-width: 1180px) {
+    .header-logo-text {
+        display: none;
+    }
+
+    .work-list {
+        justify-content: center;
+    }
+
+    .work-list-wrapper {
+        padding: 0 15px 30px 15px;
+        margin: 0;
+    }
+
+    .projects-list {
+        justify-content: space-evenly;
+    }
+
+    .numbers-item {
+        margin: 60px 15px 0 15px;
+    }
+
+    .recent-list {
+        justify-content: center;
+    }
+
+    .recent-list-item {
+        padding: 0 15px 0 15px;
+        margin: 0 0 20px 0;
+    }
+}
+
+.partners-logo-png {
+    width: 70%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media (max-width: 900px) {
+    .header {
+        padding: 20px 0 0 0;
+    }
+
+    .header-wrap {
+        flex-direction: column;
+    }
+
+    .header-wrap-nav {
+        justify-content: center;
+    }
+
+    .header-logo {
+        margin: 0 0 20px 0;
+    }
+
+    .mobile {
+        padding: 40px 0 0 0;
+    }
+
+    .partners-logo-png {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    .header-logo-text {
+        display: block;
+    }
+
+    .header-wrap {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 40px 200px;
+    }
+
+    .header-nav {
+        display: none;
+    }
+
+    .header-search {
+        margin: 0 30px 0 0;
+    }
+
+    .mobile-header-wrap-nav {
+        display: block;
+
+        &-btn {
+            display: flex;
+            position: absolute;
+            top: 57px;
+            width: 26px;
+            height: 26px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        &-btn>span,
+        &-btn>span::before,
+        &-btn>span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: $color_white;
+            transition-duration: .25s;
+        }
+
+        &-btn>span::before {
+            content: '';
+            top: -10px;
+        }
+
+        &-btn>span::after {
+            content: '';
+            top: 10px;
+        }
+
+        &-menu {
+            display: block;
+            position: fixed;
+            visibility: hidden;
+            top: 0;
+            left: -100%;
+            width: 300px;
+            height: 100%;
+            margin: 0;
+            padding: 80px 0;
+            list-style: none;
+            background-color: $color_white;
+            box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+            transition-duration: .25s;
+
+            &-item {
+                display: block;
+                padding: 12px 24px;
+                color: $color_text;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 24px;
+                font-style: normal;
+                text-decoration: none;
+                transition-duration: .25s;
+            }
+
+            &-item:active {
+                background-color: $color_lightbrown;
+                color: $color_white;
+            }
+        }
+
+
+    }
+
+    #mobile-header-wrap-nav-toggle {
+        opacity: 0;
+    }
+
+    #mobile-header-wrap-nav-toggle:checked~.mobile-header-wrap-nav-btn>span {
+        transform: rotate(45deg);
+    }
+
+    #mobile-header-wrap-nav-toggle:checked~.mobile-header-wrap-nav-btn>span::before {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    #mobile-header-wrap-nav-toggle:checked~.mobile-header-wrap-nav-btn>span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    #mobile-header-wrap-nav-toggle:checked~.mobile-header-wrap-nav-menu {
+        visibility: visible;
+        z-index: 1;
+        left: 0;
+    }
+
+    .header {
+        &-title {
+            font-size: 40px;
+        }
+
+        &-caption {
+            font-size: 30px;
+        }
+
+        &-carusel-arrow {
+            display: none;
+        }
+
+        &-slider {
+            display: none;
+        }
+    }
+
+    .projects-nav-list-item {
+        margin: 0 10px 20px 0;
+    }
+
+    .video {
+        display: none;
+    }
+
+    .mobile {
+        background-color: $color_darkbrown;
+
+        &-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &-header {
+            color: $color_white;
+        }
+
+        &-text {
+            color: $color_white;
+        }
+
+        &-list-item-text {
+            color: $color_white;
+        }
+    }
+
+    .numbers {
+        display: none;
+    }
+
+    .partners {
+        display: none;
+    }
+
+    .footer-info {
+        margin-bottom: 20px;
+    }
+
+
 }
