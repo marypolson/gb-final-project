@@ -342,7 +342,7 @@ a {
   color: #fff;
   line-height: 24px;
   text-align: center;
-  width: 570px;
+  max-width: 570px;
   margin: 0 0 30px 0;
 }
 
@@ -457,7 +457,7 @@ a {
 }
 
 .work-text {
-  width: 270px;
+  max-width: 270px;
   text-align: center;
   color: #8c8c8c;
   font-size: 14px;
@@ -816,7 +816,7 @@ a {
 .video-text {
   color: #fff;
   margin: 0 0 30px 0;
-  width: 570px;
+  max-width: 570px;
 }
 
 .video-timer {
@@ -989,7 +989,7 @@ a {
 
 .recent-list-item {
   border: 1px solid #f8f8f8;
-  width: 370px;
+  max-width: 370px;
   margin: 0 30px 0 0;
 }
 
@@ -1199,7 +1199,7 @@ a {
 }
 
 .footer-info-text {
-  width: 270px;
+  max-width: 270px;
   font-size: 14px;
   color: #555555;
   margin: 0 0 25px 0;
@@ -1244,7 +1244,7 @@ a {
 
 .footer-recent-list {
   list-style-type: none;
-  width: 270px;
+  max-width: 270px;
 }
 
 .footer-recent-list-item-date {
@@ -1550,6 +1550,9 @@ a {
   .header-search {
     margin: 0 30px 0 0;
   }
+  .header-button {
+    margin: 0 0 200px 0;
+  }
   .mobile-header-wrap-nav {
     display: block;
   }
@@ -1654,6 +1657,9 @@ a {
   .projects-nav-list-item {
     margin: 0 10px 20px 0;
   }
+  .projects-nav-list-item:last-child {
+    margin: 0 0 20px 0;
+  }
   .video {
     display: none;
   }
@@ -1689,6 +1695,80 @@ a {
   }
   .footer-info {
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 460px) {
+  .header-logo-text {
+    display: none;
+  }
+  .header-caption {
+    font-size: 26px;
+    text-align: center;
+  }
+  .header-title {
+    font-size: 30px;
+    text-align: center;
+  }
+  .header-text {
+    font-size: 14px;
+  }
+  .realization-header {
+    text-align: center;
+  }
+  .realization-text {
+    font-size: 14px;
+  }
+  .purchase-header {
+    text-align: center;
+  }
+  .purchase-text {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+  }
+  .projects-text {
+    font-size: 14px;
+  }
+  .projects-list-item {
+    padding: 0 0 30px 0;
+  }
+  .projects-list-item-img {
+    height: 100%;
+    width: auto;
+  }
+  .mobile-header {
+    text-align: center;
+  }
+  .mobile-header-wrap-nav-menu {
+    width: 250px;
+  }
+  .mobile-text {
+    text-align: center;
+    font-size: 14px;
+  }
+  .mobile-list-item-text {
+    font-size: 14px;
+  }
+  .recent-text {
+    font-size: 14px;
+  }
+  .recent-list-item {
+    padding: 0;
+  }
+  .recent-list-item-img {
+    height: auto;
+    width: 100%;
+  }
+  .footer-copyright-design {
+    display: none;
+  }
+  .footer-copyright-list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .footer-copyright-list-item-text {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

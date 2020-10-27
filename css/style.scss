@@ -189,7 +189,7 @@ a {
         @extend %font-text;
         line-height: 24px;
         text-align: center;
-        width: 570px;
+        max-width: 570px;
         margin: 0 0 30px 0;
     }
 
@@ -293,7 +293,7 @@ a {
     }
 
     &-text {
-        width: 270px;
+        max-width: 270px;
         text-align: center;
         @extend %font-text;
         color: $color_textlight;
@@ -630,7 +630,7 @@ a {
         @extend %font-text;
         color: $color_white;
         margin: 0 0 30px 0;
-        width: 570px;
+        max-width: 570px;
     }
 
     &-timer {
@@ -780,7 +780,7 @@ a {
 
         &-item {
             border: 1px solid #f8f8f8;
-            width: 370px;
+            max-width: 370px;
             margin: 0 30px 0 0;
 
             &-img {
@@ -971,7 +971,7 @@ a {
         }
 
         &-text {
-            width: 270px;
+            max-width: 270px;
             @extend %font-text;
             font-size: 14px;
             color: $color_text;
@@ -1018,7 +1018,7 @@ a {
 
         &-list {
             list-style-type: none;
-            width: 270px;
+            max-width: 270px;
 
             &-item {
                 &-date {
@@ -1323,6 +1323,10 @@ a {
         margin: 0 30px 0 0;
     }
 
+    .header-button {
+        margin: 0 0 200px 0;
+    }
+
     .mobile-header-wrap-nav {
         display: block;
 
@@ -1440,6 +1444,10 @@ a {
         margin: 0 10px 20px 0;
     }
 
+    .projects-nav-list-item:last-child {
+        margin: 0 0 20px 0;
+    }
+
     .video {
         display: none;
     }
@@ -1477,6 +1485,111 @@ a {
     .footer-info {
         margin-bottom: 20px;
     }
+}
 
+@media (max-width: 460px) {
+    .header {
+        &-logo-text {
+            display: none;
+        }
 
+        &-caption {
+            font-size: 26px;
+            text-align: center;
+        }
+
+        &-title {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        &-text {
+            font-size: 14px;
+        }
+    }
+
+    .realization {
+        &-header {
+            text-align: center;
+        }
+
+        &-text {
+            font-size: 14px;
+        }
+    }
+
+    .purchase {
+
+        &-header {
+            text-align: center;
+        }
+
+        &-text {
+            display: block;
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+
+    .projects {
+
+        &-text {
+            font-size: 14px;
+        }
+
+        &-list-item {
+            padding: 0 0 30px 0;
+
+            &-img {
+                height: 100%;
+                width: auto;
+            }
+        }
+    }
+
+    .mobile {
+        &-header {
+            text-align: center;
+
+            &-wrap-nav-menu {
+                width: 250px;
+            }
+        }
+
+        &-text {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        &-list-item-text {
+            font-size: 14px;
+        }
+    }
+
+    .recent {
+        &-text {
+            font-size: 14px;
+        }
+
+        &-list-item {
+            padding: 0;
+
+            &-img {
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+
+    .footer-copyright-design {
+        display: none;
+    }
+
+    .footer-copyright-list {
+        flex-wrap: wrap;
+    }
+
+    .footer-copyright-list-item-text {
+        display: none;
+    }
 }
