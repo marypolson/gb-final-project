@@ -892,6 +892,10 @@ a {
           box-sizing: border-box;
 }
 
+.numbers-title {
+  display: none;
+}
+
 .numbers-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1129,6 +1133,10 @@ a {
   padding: 90px 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.partners-title {
+  display: none;
 }
 
 .partners-logo {
